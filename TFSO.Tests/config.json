@@ -1,0 +1,6 @@
+{
+  "baseAddress": "https://api.24sevenoffice.com",
+  "applicationId": "Your API access key",
+  "username": "Your test username",
+  "password": "Your test password"
+}

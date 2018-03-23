@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFSO.Core", "TFSO.Core\TFSO.Core.csproj", "{C676AB57-F646-45E4-9062-900F50B6B5E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFSO.Tests", "TFSO.Tests\TFSO.Tests.csproj", "{A390E882-4353-4B47-B3F0-D21EB37C24EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Local|Any CPU = Local|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Local|Any CPU.Build.0 = Local|Any CPU
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C676AB57-F646-45E4-9062-900F50B6B5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Local|Any CPU.Build.0 = Local|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A390E882-4353-4B47-B3F0-D21EB37C24EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0EB557B-8CA4-4286-96BD-B68A3A3149B3}
+	EndGlobalSection
+EndGlobal
