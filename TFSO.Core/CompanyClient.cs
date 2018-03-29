@@ -69,13 +69,13 @@ namespace TFSO.Core
 
         #region Delete
 
-        public async Task DeleteCompanies(DateTime from)
+        public async Task DeleteCompaniesAsync(DateTime from)
         {
             var companiesToDelete = await GetCompaniesAsync(from);
             await DeleteCompanies(companiesToDelete.ToArray());
         }
 
-        private async Task DeleteCompanies(Company[] companies)
+        private async Task DeleteCompaniesAsync(Company[] companies)
         {
             await _companyService.DeleteCompaniesAsync(companies);
         }

@@ -1,8 +1,6 @@
-﻿using System;
+﻿using AuthenticationService;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using AuthenticationService;
 
 namespace TFSO.Core
 {

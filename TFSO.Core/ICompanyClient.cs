@@ -40,6 +40,6 @@ namespace TFSO.Core
         /// </summary>
         /// <param name="from">DateTime to delete from</param>
         /// <returns>Task</returns>
-        Task DeleteCompanies(DateTime from);
+        Task DeleteCompaniesAsync(DateTime from);
     }
 }
