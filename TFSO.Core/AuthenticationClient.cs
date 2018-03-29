@@ -1,7 +1,8 @@
-﻿using System;
-using System.Net;
+﻿using AuthenticationService;
+using System;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
-using AuthenticationService;
 using TFSO.Core.Toolbox;
 
 namespace TFSO.Core
@@ -23,7 +24,7 @@ namespace TFSO.Core
             var credential = new Credential
             {
                 Username = username,
-                Password = password,
+                Password = GetMd5Hash(password),
                 ApplicationId = _applicationId
             };
 
@@ -33,7 +34,19 @@ namespace TFSO.Core
             {
                 throw new ArgumentException("LoginAsync operation failed");
             }
-        } 
+        }
+        #endregion
+
+        #region
+        private static string GetMd5Hash(string text)
+        {
+            var message = System.Text.Encoding.Unicode.GetBytes(text);
+
+            MD5 hashString = new MD5CryptoServiceProvider();
+
+            var hashValue = hashString.ComputeHash(message);
+            return hashValue.Aggregate("", (current, x) => current + x.ToString("x2").ToLower());
+        }
         #endregion
     }
 }
