@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.IO;
-using System.Runtime.CompilerServices;
-using Microsoft.Extensions.Configuration;
 
 // ReSharper disable JoinDeclarationAndInitializer
 
-[assembly: InternalsVisibleTo("TFSO.Tests")]
-namespace TFSO.Core.Toolbox
+namespace TFSO.Tests.Toolbox
 {
     public sealed class Configuration
     {

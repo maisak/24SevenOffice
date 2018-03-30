@@ -3,21 +3,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using TFSO.Core.Toolbox;
 
+[assembly: InternalsVisibleTo("TFSO.Tests")]
 namespace TFSO.Core
 {
     public class AuthenticationClient
     {
         #region
-        private readonly Uri _baseAddress = new Uri(Configuration.Instance.Settings["baseAddress"]);
-        private readonly Guid _applicationId = new Guid(Configuration.Instance.Settings["applicationId"]);
+        private readonly Uri _baseAddress;
+        private readonly Guid _applicationId;
         private const string SessionCookieName = "ASP.NET_SessionId";
         private AuthenticateSoapClient _authService;
         public string SessionId { get; private set; }
         #endregion
+
+        public AuthenticationClient(string baseAddress, string applicationId)
+        {
+            _baseAddress = new Uri(baseAddress);
+            _applicationId = new Guid(applicationId);
+        }
 
         #region Login
 

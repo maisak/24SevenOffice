@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
-using TFSO.Core.Toolbox;
+using TFSO.Tests.Toolbox;
 
 namespace TFSO.Tests
 {

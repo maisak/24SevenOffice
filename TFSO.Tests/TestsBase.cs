@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 using TFSO.Core;
-using TFSO.Core.Toolbox;
+using TFSO.Tests.Toolbox;
 
 namespace TFSO.Tests
 {
@@ -13,7 +13,7 @@ namespace TFSO.Tests
         [OneTimeSetUp]
         public async Task SetUp()
         {
-            AuthenticationClient = new AuthenticationClient();
+            AuthenticationClient = new AuthenticationClient(Configuration.Instance.Settings["baseAddress"], Configuration.Instance.Settings["applicationId"]);
             await AuthenticationClient.LoginAsync(Configuration.Instance.Settings["username"], Configuration.Instance.Settings["password"]);
         }
     }
