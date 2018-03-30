@@ -8,7 +8,7 @@ namespace TFSO.Tests
     [TestFixture]
     public class TestsBase
     {
-        internal IAuthenticationClient AuthenticationClient;
+        internal AuthenticationClient AuthenticationClient;
 
         [OneTimeSetUp]
         public async Task SetUp()

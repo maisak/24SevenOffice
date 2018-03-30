@@ -9,7 +9,7 @@ using TFSO.Core.Toolbox;
 
 namespace TFSO.Core
 {
-    public class AuthenticationClient : IAuthenticationClient
+    public class AuthenticationClient
     {
         #region
         private readonly Uri _baseAddress = new Uri(Configuration.Instance.Settings["baseAddress"]);

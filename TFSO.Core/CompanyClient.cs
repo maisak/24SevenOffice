@@ -8,7 +8,7 @@ using TFSO.Core.Toolbox;
 
 namespace TFSO.Core
 {
-    public class CompanyClient : ICompanyClient
+    public class CompanyClient
     {
         #region
         private const string SessionCookieName = "ASP.NET_SessionId";
@@ -72,7 +72,7 @@ namespace TFSO.Core
         public async Task DeleteCompaniesAsync(DateTime from)
         {
             var companiesToDelete = await GetCompaniesAsync(from);
-            await DeleteCompanies(companiesToDelete.ToArray());
+            await DeleteCompaniesAsync(companiesToDelete.ToArray());
         }
 
         private async Task DeleteCompaniesAsync(Company[] companies)
