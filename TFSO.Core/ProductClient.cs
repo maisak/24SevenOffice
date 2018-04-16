@@ -11,7 +11,7 @@ namespace TFSO.Core
     public class ProductClient
     {
         private const string SessionCookieName = "ASP.NET_SessionId";
-        private const string BdcCategoryName = "BillDotCom";
+        private const string DefaultCategoryName = "Default";
         private readonly DateTime _defaultSearchDate = new DateTime(2000, 1, 1);
         private readonly ProductServiceSoapClient _productService;
 
@@ -28,8 +28,8 @@ namespace TFSO.Core
         {
             if (product.CategoryId <= 0)
             {
-                var category = GetCategories().Result.FirstOrDefault(x => x.Name == BdcCategoryName);
-                var bdcCategoryId = category?.Id ?? CreateCategory(new Category { Name = BdcCategoryName }).Result.Id;
+                var category = GetCategories().Result.FirstOrDefault(x => x.Name == DefaultCategoryName);
+                var bdcCategoryId = category?.Id ?? CreateCategory(new Category { Name = DefaultCategoryName }).Result.Id;
                 product.CategoryId = bdcCategoryId;
             }
 
