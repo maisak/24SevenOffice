@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TFSO.Core.Toolbox
+﻿namespace TFSO.Core.Toolbox
 {
     public class ServiceFactory
     {
@@ -12,6 +7,7 @@ namespace TFSO.Core.Toolbox
 
         private AuthenticationClient _authClient;
         private CompanyClient _companyClient;
+        private ProductClient _productClient;
 
         public ServiceFactory(string baseAddress, string applicationId)
         {
@@ -29,9 +25,9 @@ namespace TFSO.Core.Toolbox
             return _companyClient ?? (_companyClient = new CompanyClient(_authClient.SessionId));
         }
 
-        public CompanyClient GetProductClient()
+        public ProductClient GetProductClient()
         {
-            return _companyClient ?? (_companyClient = new CompanyClient(_authClient.SessionId));
+            return _productClient ?? (_productClient = new ProductClient(_authClient.SessionId));
         }
     }
 }
