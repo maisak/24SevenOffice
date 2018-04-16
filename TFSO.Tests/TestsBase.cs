@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 using TFSO.Core;
+using TFSO.Core.Toolbox;
 using TFSO.Tests.Toolbox;
 
 namespace TFSO.Tests
@@ -8,13 +9,15 @@ namespace TFSO.Tests
     [TestFixture]
     public class TestsBase
     {
-        internal AuthenticationClient AuthenticationClient;
+        internal ServiceFactory ServiceFactory;
 
         [OneTimeSetUp]
         public async Task SetUp()
         {
-            AuthenticationClient = new AuthenticationClient(Configuration.Instance.Settings["baseAddress"], Configuration.Instance.Settings["applicationId"]);
-            await AuthenticationClient.LoginAsync(Configuration.Instance.Settings["username"], Configuration.Instance.Settings["password"]);
+            ServiceFactory = new ServiceFactory(Configuration.Instance.Settings["baseAddress"], 
+                                                Configuration.Instance.Settings["applicationId"]);
+            var authClient = ServiceFactory.GetAuthenticationClient();
+            await authClient.LoginAsync(Configuration.Instance.Settings["username"], Configuration.Instance.Settings["password"]);
         }
     }
 }

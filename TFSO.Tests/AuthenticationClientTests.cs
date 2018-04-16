@@ -9,14 +9,14 @@ namespace TFSO.Tests
         [Test]
         public async Task GetIdentitiesTest()
         {
-            var identities = await AuthenticationClient.GetIdentitiesAsync();
+            var identities = await ServiceFactory.GetAuthenticationClient().GetIdentitiesAsync();
             Assert.Greater(identities.Count, 0);
         }
 
         [Test]
         public async Task SetIdentityTest()
         {
-            var success = await AuthenticationClient.SetIdentityAsync(Configuration.Instance.Settings["identity"]);
+            var success = await ServiceFactory.GetAuthenticationClient().SetIdentityAsync(Configuration.Instance.Settings["identity"]);
             Assert.IsTrue(success);
         }
     }
