@@ -1,14 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Configurations>Debug;Release;Local</Configurations>
     <Authors>Anthony Maisak</Authors>
     <Company>KM Ware</Company>
-    <Product>24SevenOffice API wrapper.</Product>
-    <PackageTags></PackageTags>
+    <Product>24SevenOffice API wrapper for .NET Core.</Product>
+    <PackageTags>wrapper, 24SevenOffice, netcore, netstandard</PackageTags>
     <RepositoryType>GitHub</RepositoryType>
     <RepositoryUrl>https://github.com/maisak/24SevenOffice</RepositoryUrl>
+    <Description>24SevenOffice API wrapper for .NET Core.</Description>
+    <Version>1.0.2</Version>
+    <PackageProjectUrl>https://github.com/maisak/24SevenOffice</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
