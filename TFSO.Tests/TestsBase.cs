@@ -18,6 +18,7 @@ namespace TFSO.Tests
                                                 Configuration.Instance.Settings["applicationId"]);
             var authClient = ServiceFactory.GetAuthenticationClient();
             await authClient.LoginAsync(Configuration.Instance.Settings["username"], Configuration.Instance.Settings["password"]);
+            await authClient.SetIdentityAsync(Configuration.Instance.Settings["identity"]);
         }
     }
 }
