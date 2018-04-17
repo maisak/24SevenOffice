@@ -18,7 +18,13 @@ namespace TFSO.Core
         private readonly Guid _applicationId;
         private const string SessionCookieName = "ASP.NET_SessionId";
         private AuthenticateSoapClient _authService;
+        private IEnumerable<Identity> _identities;
+        #endregion
+
+        #region Publics
+
         public string SessionId { get; private set; }
+
         #endregion
 
         public AuthenticationClient(string baseAddress, string applicationId)
@@ -54,10 +60,15 @@ namespace TFSO.Core
 
         #region Identities
 
-        public async Task<List<Identity>> GetIdentitiesAsync()
+        public async Task<IEnumerable<Identity>> GetIdentitiesAsync()
         {
-            var identities = await _authService.GetIdentitiesAsync();
-            return identities.ToList();
+            return _identities ?? (_identities = await _authService.GetIdentitiesAsync());
+        }
+
+        public async Task<Identity> GetCurrentIdentityAsync()
+        {
+            var list = await GetIdentitiesAsync();
+            return list.FirstOrDefault(x => x.IsCurrent);
         }
 
         public async Task<bool> SetIdentityAsync(string identity)

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Linq;
+using NUnit.Framework;
 using System.Threading.Tasks;
 using TFSO.Tests.Toolbox;
 
@@ -10,7 +11,14 @@ namespace TFSO.Tests
         public async Task GetIdentitiesTest()
         {
             var identities = await ServiceFactory.GetAuthenticationClient().GetIdentitiesAsync();
-            Assert.Greater(identities.Count, 0);
+            Assert.Greater(identities.Count(), 0);
+        }
+
+        [Test]
+        public async Task GetCurrentIdentityTest()
+        {
+            var identity = await ServiceFactory.GetAuthenticationClient().GetCurrentIdentityAsync();
+            Assert.IsTrue(identity.IsCurrent);
         }
 
         [Test]
